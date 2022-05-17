@@ -1,0 +1,17 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+<form action="/login" method="post">
+  {{form.hidden_tag()}}
+  <div class="form-outline mb-4">
+    <label class="form-label" for="email">Email</label>
+    {{form.email(type="email" ,id="email",class="form-control form-control-lg")}}
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="password">Password</label>
+    {{form.password(type="password" ,id="password",class="form-control form-control-lg")}}
+  </div>
+  {{form.remember(class="form-control form-control-lg")}}<label class="form-label" for="remember">Remember Me</label>
+  <div>
+    {{form.submit(class="btn btn-outline-dark btn-lg px-5",type="submit")}}
+  </div>
+</form>
