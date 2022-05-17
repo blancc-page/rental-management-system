@@ -1,3 +1,36 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
-{{wtf.quick_form(form)}}
+<form action="/register" method="post">
+  {{form.hidden_tag()}}
+  <div class="form-outline mb-4">
+    <label class="form-label" for="f-name">First Name</label>
+    {{form.firstname(type="text" ,id="email",class="form-control form-control-lg")}}
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="m-name">Middle Name</label>
+    {{form.middlename(type="text" ,id="m-name",class="form-control form-control-lg")}}
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="l-name">Last Name</label>
+    {{form.lastname(type="text" ,id="l-name",class="form-control form-control-lg")}}
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="email">E-mail</label>
+    {{form.email(type="email" ,id="email",class="form-control form-control-lg")}}
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="phone">Phone No.</label>
+    {{form.phonenumber(type="number" ,id="phone",class="form-control form-control-lg")}}
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="password">Password</label>
+    {{form.password(type="password" ,id="password",class="form-control form-control-lg")}}
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="password">Confirm Password</label>
+    {{form.password_confirm(type="password",id="password",class="form-control form-control-lg")}}
+  </div>
+  <div>
+    {{form.submit(class="btn btn-outline-dark btn-lg px-5",type="submit")}}
+  </div>
+</form>
