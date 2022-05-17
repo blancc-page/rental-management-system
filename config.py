@@ -2,6 +2,7 @@ import os
 
 class Config:
   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:dclxvi@localhost/propertydb'
+  # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:1234@localhost/propertydb'
   UPLOADED_PHOTOS_DEST = 'app/static/photos'
   SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -13,6 +14,7 @@ class TestConfig(Config):
 
 class DevConfig(Config):
   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:dclxvi@localhost/propertydb'
+  # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:1234@localhost/propertydb'
   DEBUG = True
 
 config_options = {

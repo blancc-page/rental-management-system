@@ -8,6 +8,8 @@ from flask_uploads import UploadSet,configure_uploads,IMAGES
 from flask_sqlalchemy import SQLAlchemy
 
 
+
+
 photos = UploadSet('photos',IMAGES)
 
 bootstrap = Bootstrap()
@@ -23,7 +25,8 @@ def create_app(config_name):
   db.init_app(app)
   
   #initialize flask extensions
-  bootstrap.init_app(app)  
+  bootstrap.init_app(app)
+  db.init_app(app)  
 
   
   #configure_uploadset
