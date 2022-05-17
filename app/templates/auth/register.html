@@ -1,36 +1,42 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
-<form action="/register" method="post">
-  {{form.hidden_tag()}}
-  <div class="form-outline mb-4">
-    <label class="form-label" for="f-name">First Name</label>
-    {{form.firstname(type="text" ,id="email",class="form-control form-control-lg")}}
+{% extends 'base.html'%}
+
+
+{% block content %}
+<div class="container-register">
+  <div class="register-greeting-txt">
+    <h1 style="font-size: 50px; ">
+      Welcome, please sign up to continue.
+    </h1>
   </div>
-  <div class="form-outline mb-4">
-    <label class="form-label" for="m-name">Middle Name</label>
-    {{form.middlename(type="text" ,id="m-name",class="form-control form-control-lg")}}
-  </div>
-  <div class="form-outline mb-4">
-    <label class="form-label" for="l-name">Last Name</label>
-    {{form.lastname(type="text" ,id="l-name",class="form-control form-control-lg")}}
-  </div>
-  <div class="form-outline mb-4">
-    <label class="form-label" for="email">E-mail</label>
-    {{form.email(type="email" ,id="email",class="form-control form-control-lg")}}
-  </div>
-  <div class="form-outline mb-4">
-    <label class="form-label" for="phone">Phone No.</label>
-    {{form.phonenumber(type="number" ,id="phone",class="form-control form-control-lg")}}
-  </div>
-  <div class="form-outline mb-4">
-    <label class="form-label" for="password">Password</label>
-    {{form.password(type="password" ,id="password",class="form-control form-control-lg")}}
-  </div>
-  <div class="form-outline mb-4">
-    <label class="form-label" for="password">Confirm Password</label>
-    {{form.password_confirm(type="password",id="password",class="form-control form-control-lg")}}
-  </div>
-  <div>
-    {{form.submit(class="btn btn-outline-dark btn-lg px-5",type="submit")}}
-  </div>
-</form>
+  <form class="register-form" action="/register" method="post">
+    {{form.hidden_tag()}}
+    <div class="register-input">
+      <!-- <label class="form-label" for="f-name">First Name</label> -->
+      {{form.firstname(type="text" ,id="email",class="form-control form-control-lg", placeholder="First Name")}}
+    </div>
+    <div class="register-input">
+      {{form.middlename(type="text" ,id="m-name",class="form-control form-control-lg", placeholder="Middle Name")}}
+    </div>
+    <div class="register-input">
+      {{form.lastname(type="text" ,id="l-name",class="form-control form-control-lg", placeholder="Last Name")}}
+    </div>
+    <div class="register-input">
+      {{form.email(type="email" ,id="email",class="form-control form-control-lg", placeholder="E-mail")}}
+    </div>
+    <div class="register-input">
+      {{form.phonenumber(type="number" ,id="phone",class="form-control form-control-lg", placeholder="Phone No.")}}
+    </div>
+    <div class="register-input">
+      {{form.password(type="password" ,id="password",class="form-control form-control-lg", placeholder="Password")}}
+    </div>
+    <div class="register-input">
+      {{form.password_confirm(type="password",id="password",class="form-control form-control-lg", placeholder="Confirm Password")}}
+    </div>
+    <div class="register-btn">
+      {{form.submit(class="btn btn-outline-dark btn-lg px-5",type="submit")}}
+    </div>
+  </form>
+</div>
+{% endblock %}

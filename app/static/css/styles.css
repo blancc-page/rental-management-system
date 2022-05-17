@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* sign up page */
+
+.container-register{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=906&q=80');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register-greeting-txt{
+    position: absolute;
+    font-weight: bold;
+    font-size: 50px !important;
+    top: 30%;
+    left: 25%;
+    width: 30%;
+    text-align: right;
+}
+
+.register-form{
+    margin: 8% 0  0 70%; 
+    text-align: right;
+}
+
+.register-input{
+    right: 0;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.register-btn{
+    margin-right: 110px;
+}
+
+/* log in page */
+
+.container-login{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=906&q=80');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-form{
+    margin: 8% 0  0 70%; 
+    text-align: right;
+}
+
+.login-input{
+    right: 0;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.login-btn{
+    margin-right: 110px;
+}
+
+.remember-me{
+    width: 20px;
+    margin-left: 280px;
+}
+
+span.remember-me-label{
+    position: absolute;
+    font-size: 20px;
+    right: 150px;
+    top: 240px;
+}
