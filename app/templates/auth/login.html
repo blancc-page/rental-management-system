@@ -1,17 +1,26 @@
 {% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'base.html' %}
 
-<form action="/login" method="post">
-  {{form.hidden_tag()}}
-  <div class="form-outline mb-4">
-    <label class="form-label" for="email">Email</label>
-    {{form.email(type="email" ,id="email",class="form-control form-control-lg")}}
-  </div>
-  <div class="form-outline mb-4">
-    <label class="form-label" for="password">Password</label>
-    {{form.password(type="password" ,id="password",class="form-control form-control-lg")}}
-  </div>
-  {{form.remember(class="form-control form-control-lg")}}<label class="form-label" for="remember">Remember Me</label>
-  <div>
-    {{form.submit(class="btn btn-outline-dark btn-lg px-5",type="submit")}}
-  </div>
-</form>
+{% block content %}
+<div class="container-login">
+  <form class="login-form" action="/login" method="post">
+    {{form.hidden_tag()}}
+    <div class="login-input">
+      <!-- <label class="form-label" for="email">Email</label> -->
+      {{form.email(type="email" ,id="email",class="form-control form-control-lg", placeholder="E-mail")}}
+    </div>
+    <div class="login-input">
+      {{form.password(type="password" ,id="password",class="form-control form-control-lg", placeholder="Password")}}
+    </div>
+    <div class="remember-me">
+      {{form.remember(class="form-control form-control-lg")}}
+      <span class="remember-me-label">
+        Remember Me
+      </span>
+    </div>
+    <div class="login-btn">
+      {{form.submit(class="btn btn-outline-dark btn-lg px-5",type="submit")}}
+    </div>
+  </form>
+</div>
+{% endblock %}
