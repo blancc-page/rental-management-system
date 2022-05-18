@@ -1,4 +1,4 @@
-##### By Collins,Moses,Adeline,Teresiah
+##### By Collins<a>https://github.com/sircollo</a>,Moses <a>https://github.com/blancc-page</a>,Adeline,Teresiah<a>https://github.com/Teresiah-cpu</a>
 ### Descrption
 
 # PrMs

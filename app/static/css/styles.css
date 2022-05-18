@@ -221,3 +221,8 @@ span.remember-me-label{
     width: 240px;
     margin: 0 69px;
 }
+
+/* profile page */
+#edit{
+    float: right;
+}

@@ -12,13 +12,13 @@
       {% endif %}
     </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5 text-center">
       <h3>Name: {{user.firstname | capitalize}} {%if user.lastname%} {{user.lastname | capitalize}}{%else%} {% endif %} {{user.lastname | capitalize}}</h3>
       <h5> Contact details:</h5>       
         <p>Number: {{user.phonenumber}}</p> 
         <p>E-mail: {{user.email}}</p> 
     </div>
-    <div class="col-md-4">
+    <div>
       <div class="user-bio">
         {% if user.bio %}
         <p> {{user.biography}}</p>
@@ -26,13 +26,15 @@
         <p> {{user.firstname| capitalize}} has no bio </p>
         {% endif %}
       </div>
-    </div>
+    </div>     
   </div>
-  <div>
-  
-    <a href="{{url_for('main.update_profile',firstname=user.firstname)}}"><button>Edit profile</button></a>
+  <div id="add">
     <a href="{{url_for('main.add_property')}}"><button>Add Property</button></a>
-
   </div>
+  <div id="edit">
+    <a href="{{url_for('main.update_profile',firstname=user.firstname)}}"><button>Edit profile</button></a>
+  </div>
+  
+  
 </div>
 {% endblock %}
