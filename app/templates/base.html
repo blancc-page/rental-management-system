@@ -26,7 +26,10 @@
     <link type="image/png" sizes="32x32" rel="icon" href="{{url_for('static',filename='photos/favicon.png')}}">
 </head>
 <body>
-
+    {% block navbar %}
+    {%include 'navbar.html' %}
+    {% endblock %}
+    
     {% block content %}
 
 
