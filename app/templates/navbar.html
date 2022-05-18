@@ -13,12 +13,24 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">About Us</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('auth.register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>  Register</a>
-            </li>
-            <li class="nav-item">
+
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="{{url_for('auth.login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>  Log-In</a>
+            </li> -->
+            {% if current_user.is_authenticated %}
+            <li><a href="{{url_for('main.profile',firstname=current_user.firstname)}}">Profile</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('auth.login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign out</a>
             </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('auth.register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('auth.login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a>
+            </li>
+          
+            {% endif %}
             </ul>
         </div>
         </div>
