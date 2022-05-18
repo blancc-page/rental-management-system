@@ -3,6 +3,11 @@
 
 {% block content %}
 <div class="container-login">
+  <div class="login-greeting-txt">
+    <h1 style="font-size: 50px; ">
+      Welcome, please login to continue.
+    </h1>
+  </div>
   <form class="login-form" action="/login" method="post">
     {{form.hidden_tag()}}
     <div class="login-input">
