@@ -14,10 +14,10 @@
                 <a class="nav-link" href="#">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>  Register</a>
+                <a class="nav-link" href="{{url_for('auth.register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>  Register</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled"><i class="fa fa-sign-in" aria-hidden="true"></i>  Log-In</a>
+                <a class="nav-link" href="{{url_for('auth.login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>  Log-In</a>
             </li>
             </ul>
         </div>

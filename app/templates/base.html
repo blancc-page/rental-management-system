@@ -18,7 +18,12 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
     {% endblock %}
 
-    <title>Document</title>
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Property Manager</title>
+    {% endif %}
+    <link type="image/png" sizes="32x32" rel="icon" href="{{url_for('static',filename='photos/favicon.png')}}">
 </head>
 <body>
     {% block navbar %}
