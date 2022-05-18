@@ -3,7 +3,7 @@ from . import auth
 from ..models import *
 from .forms import RegistrationForm,LoginForm
 from .. import db
-from flask_login import login_user,login_required,logout_user
+from flask_login import login_user,login_required,logout_user,current_user
 
 
 @auth.route('/register', methods=['GET','POST'])
@@ -20,11 +20,12 @@ def register():
 @auth.route('/login',methods=['GET','POST'])
 def login():
   form = LoginForm()
+  properties = Property.query.filter_by(user_id=current_user._get_current_object().id ).all()
   if form.validate_on_submit():
     user = User.query.filter_by(email=form.email.data).first()
     if user is not None and user.verify_password(form.password.data):
       login_user(user,form.remember.data)
-      return render_template('profile/profile.html',user=user)
+      return render_template('profile/profile.html',user=user,properties=properties)
     
     flash('Invalid username or password')
   title = 'Login'  

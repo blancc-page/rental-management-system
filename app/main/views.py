@@ -12,34 +12,16 @@ from flask_login import current_user
 def index():
   return render_template('index.html')
 
-
+ 
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
+    # properties = Property.query.filter_by(user_id=current_user._get_current_object().id ).all()
+    properties = Property.query.filter_by(property_type='land').all()
     if user is None:
       abort(404)
       
-    return render_template('profile/profile.html', user=user)
-
-# @main.route('/user/<int:id>',methods = ['GET','POST'])
-# def update_profile(id):
-#   form = UpdateProfile()
-#   name_to_update = User.query.filter_by(user_id=id)
-#   if request.method == "POST":
-#     name_to_update.firstname = form.firstname.data
-#     name_to_update.phonenumber =  form.phonenumber.data
-#     name_to_update.biography =  form.biography.data
-#     try:
-#       db.session.commit()
-#       flash('Updated successfully')
-#       return render_template('profile/profile.html',id=id)
-#     except:
-#       flash('Not Updated')
-#       return render_template('profile/update.html',form =form,name_to_update=name_to_update)
-    
-#   else:
-#     return render_template('profile/update.html',form =form,name_to_update=name_to_update)
-  
+    return render_template('profile/profile.html', user=user,properties=properties)
   
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 def update_profile(uname):
@@ -72,9 +54,8 @@ def add_property():
       property_location = form.property_location.data
       property_value = form.property_value.data
       property_rooms = form.property_rooms.data
-      # user_id = current_user
-      # user_id=current_user._get_current_object().id
-      new_property_object = Property(property_type=property_type,property_name=property_name,property_value=property_value,property_rooms=property_rooms,property_location=property_location)
+      user_id = current_user
+      new_property_object = Property(property_type=property_type,user_id=current_user._get_current_object().id,property_name=property_name,property_value=property_value,property_rooms=property_rooms,property_location=property_location)
       
       new_property_object.save_property()
       flash('Added property')
