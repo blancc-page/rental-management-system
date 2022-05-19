@@ -49,6 +49,7 @@ def update_profile(uname):
 def add_property():
   form = AddPropertyForm()
   properties = Property.query.filter_by(user_id =current_user._get_current_object().id ).all()
+  lands = Property.query.filter_by(property_type='Lands').all()
   if form.validate_on_submit():
       property_type = form.property_type.data
       property_name = form.property_name.data
@@ -61,7 +62,7 @@ def add_property():
       new_property_object.save_property()
       flash('Added property')
       
-      return render_template('profile/profile.html',properties=properties,user=user_id)
+      return render_template('profile/profile.html',properties=properties,user=user_id,lands=lands)
   return render_template('add_property.html',form=form)
     
 @main.route('/property_details<pname>',methods=['GET','POST'])
