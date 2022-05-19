@@ -46,7 +46,7 @@ nav a{
 
 .nav{
     position: fixed;
-    background-color: #11111180;
+    background-color: transparent;
     top: 0;
     left: 0;
     right: 0;

@@ -1,5 +1,5 @@
 const aboutUs = document.querySelector(".about-us-section");
-const nav = docuent.querySelector(".nav") 
+const nav = document.querySelector(".nav") 
 
 window.addEventListener("scroll", fixNav);
 
