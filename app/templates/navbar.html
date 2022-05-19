@@ -4,14 +4,14 @@
             <h1 class="logo"><a href="/">PropertyMS</a></h1>
             <ul>
                 <li><a href="/" class="current">Home</a></li>
-                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#about-us">About</a></li>
                 {% if current_user.is_authenticated %}
 
                 
                 <li style="color:white;padding:15px;"><a href="{{url_for('main.profile',uname=current_user.username)}}">{{current_user.username}}</a></li>
                 
 
-                <li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="{{url_for('auth.register')}}">Logout</a></li>
+                <li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="{{url_for('auth.logout')}}">Logout</a></li>
                 {% else %}
                 <li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="{{url_for('auth.register')}}">Register</a></li>
                 <li><i class="fa fa-sign-in" aria-hidden="true"></i><a href="{{url_for('auth.login')}}">Login</a></li> 
