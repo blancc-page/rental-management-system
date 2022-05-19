@@ -14,11 +14,9 @@
                 <a class="nav-link" href="#">About Us</a>
             </li>
 
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="{{url_for('auth.login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>  Log-In</a>
-            </li> -->
             {% if current_user.is_authenticated %}
-            <li style="color:white;padding:15px;">{{current_user.username}}</li>
+            <li class="nav-item">
+            <a class="nav-link" href="">{{current_user.username}}<i class="fa-solid fa-user-check"></i></a></li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url_for('auth.logout')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign out</a>
             </li>
