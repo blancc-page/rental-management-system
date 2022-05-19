@@ -15,8 +15,8 @@ class TestConfig(Config):
   pass
 
 class DevConfig(Config):
-  # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:dclxvi@localhost/propertydb'
-  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:1234@localhost/propertydb'
+  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:dclxvi@localhost/propertydb'
+  # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:1234@localhost/propertydb'
   DEBUG = True
 
 config_options = {

@@ -3,19 +3,19 @@
 
 {% block content %}
 {{wtf.quick_form(form)}}
-{% endblock %}
+{% endblock %} 
 
 
-<div class="container">
+<div class="container-update-profile">
   <form class="update-form" action="/update_profile" methods="POST">
     {{form.hidden_tag()}}
     <div class="update-input">
-      <!-- <label class="form-label" for="email">Email</label> -->
+      <label class="form-label" for="email">Email</label>
       {{form.phonenumber(type="number" ,id="phone",class="form-control form-control-lg", placeholder="Phone Number")}}
     </div>
     <div class="update-input">
-      <!-- <label class="form-label" for="email">Email</label> -->
-      {{form.biography(type="text" ,id="bio",class="form-control form-control-lg", placeholder="About you")}}
+      <label class="form-label" for="email">Email</label>
+    {{form.biography(type="text" ,id="bio",class="form-control form-control-lg", placeholder="About you")}}
     </div>
     <div class="update-btn">
       {{form.submit(class="btn btn-outline-dark btn-lg px-5",type="submit")}}
