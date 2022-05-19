@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import render_template,abort,redirect,url_for,flash,request
 from . import main
 from ..models import *
@@ -62,5 +63,9 @@ def add_property():
       return render_template('properties.html',properties=properties)
   return render_template('add_property.html',form=form)
     
+@main.route('/property_details<pname>',methods=['GET','POST'])
+def property_details(pname):
+  property = Property.query.filter_by(property_name=pname).all()
+  return render_template('properties.html',property=property)
 
   
