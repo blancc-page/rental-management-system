@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import render_template,abort,redirect,url_for,flash,request
 from . import main
 from ..models import *

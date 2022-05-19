@@ -4,7 +4,7 @@ const nav = document.querySelector(".nav")
 window.addEventListener("scroll", fixNav);
 
 function fixNav() {
-    if(window.scrollY > aboutUs.offsetHeight + 150) {
+    if(window.scrollY > aboutUs.offsetHeight - 400) {
         nav.classList.add("active");
         console.log("dark");
     } else {
