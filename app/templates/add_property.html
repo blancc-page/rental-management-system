@@ -2,4 +2,34 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 {% block content %}
 {{wtf.quick_form(form)}}
+
+<div class="container">
+  <form class="update-form" action="/add_property" method="post">
+    {{form.hidden_tag()}}
+    <div class="update-input">
+      <!-- <label class="form-label" for="email">Email</label> -->
+      {{form.property_type(type="text" ,id="f-name",class="form-control form-control-lg")}}
+    </div>
+    <div class="update-input">
+      <!-- <label class="form-label" for="email">Email</label> -->
+      {{form.property_name(type="text" ,id="phone",class="form-control form-control-lg", placeholder="Name")}}
+    </div>
+    <div class="update-input">
+      <!-- <label class="form-label" for="email">Email</label> -->
+      {{form.property_location(type="text" ,id="bio",class="form-control form-control-lg", placeholder="Location")}}
+    </div>
+    <div class="update-input">
+      <!-- <label class="form-label" for="email">Email</label> -->
+      {{form.property_value(type="text" ,id="bio",class="form-control form-control-lg", placeholder="Value")}}
+    </div>
+    <div class="update-input">
+      <!-- <label class="form-label" for="email">Email</label> -->
+      {{form.property_rooms(type="text" ,id="bio",class="form-control form-control-lg", placeholder="Rooms")}}
+    </div>
+    <div class="update-btn">
+      {{form.submit(class="btn btn-outline-dark btn-lg px-5",type="submit")}}
+    </div>
+  </form>
+</div>
 {% endblock %}
+
