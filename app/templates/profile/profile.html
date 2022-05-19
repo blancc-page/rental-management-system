@@ -33,13 +33,14 @@
             
           </div>
         </div>
+        <h5 class="text-center">All Properties</h5>
         <div class="card mb-4 mb-lg-0">
           <div class="card-body p-0">
             <ul class="list-group list-group-flush rounded-3">
               {% for property in properties %}
               <li class="list-group-item d-flex justify-content-between align-items-center p-3 mb-1">
-                <p class="mb-0">{{property.property_name}}</p>
-                <i class="fas fa-globe fa-lg text-warning"></i>
+                <a href=""><p class="mb-0">{{property.property_name}}</p></a>
+                <i class="fas fa-globe fa-lg text-warning">{{property.property_location}}</i>
               </li>
               {% endfor %}
             </ul>
@@ -86,5 +87,41 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="text-center">Lands</h5>
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body">
+                {% for property in properties %}
+                <h6 class="mb-1">Name: {{property.property_name}}</h6>
+                <li class="list-group-item">                  
+                  <p>Location: {{property.property_location}}</p>
+                  <p>Value: Ksh:  {{property.property_value}}</p>
+                  <hr>
+                </li>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5 class="text-center">Buildings</h5>
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body">
+                {% for property in properties%}
+                <h6 class="mb-1">Name: {{property.property_name}}</h6>
+                <li class="list-group-item">                  
+                  <p>Location: {{property.property_location}}</p>
+                  <p>Value: Ksh:  {{property.property_value}}</p>
+                  <hr>
+                </li>
+                {% endfor %}       
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
