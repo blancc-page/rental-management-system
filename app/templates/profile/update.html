@@ -2,23 +2,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
-<<<<<<< HEAD
-{{wtf.quick_form(form)}}
-{% endblock %} 
-
-
 <div class="container-update-profile">
-  <form class="update-form" action="/update_profile" methods="POST">
-    {{form.hidden_tag()}}
-    <div class="update-input">
-      <label class="form-label" for="email">Email</label>
-      {{form.phonenumber(type="number" ,id="phone",class="form-control form-control-lg", placeholder="Phone Number")}}
-    </div>
-    <div class="update-input">
-      <label class="form-label" for="email">Email</label>
-    {{form.biography(type="text" ,id="bio",class="form-control form-control-lg", placeholder="About you")}}
-=======
-<div class="container">
   <form class="update-form" action="" method="post">
     {{updateform.hidden_tag()}}
     <div class="update-input">
@@ -32,7 +16,6 @@
     <div class="update-input">
       <!-- <label class="form-label" for="email">Email</label> -->
       {{updateform.biography(type="text" ,id="bio",class="form-control form-control-lg", placeholder="About you")}}
->>>>>>> 624a6fa6fab196ae27a0927b1eff09a0ed2adc09
     </div>
     <div class="update-btn">
       {{updateform.submit(class="btn btn-outline-dark btn-lg px-5",type="submit")}}
