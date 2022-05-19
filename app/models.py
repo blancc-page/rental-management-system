@@ -11,8 +11,8 @@ class User(UserMixin,db.Model):
   __tablename__='users'
   id = db.Column(db.Integer, primary_key=True)
   firstname = db.Column(db.String(30))
-  middlename = db.Column(db.String(30),nullable=True)
   lastname = db.Column(db.String(30))
+  username = db.Column(db.String(255))
   email = db.Column(db.String(100),unique=True,index=True,nullable=False)
   phonenumber = db.Column(db.Integer())
   pass_secure = db.Column(db.String(255))

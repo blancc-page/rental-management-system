@@ -1,5 +1,6 @@
 ##### By Collins<a>https://github.com/sircollo</a>,Moses <a>https://github.com/blancc-page</a>,Adeline,Teresiah<a>https://github.com/Teresiah-cpu</a>
-### Descrption
+### A website that will help landlords manage and keep track of their
+properties and clients.
 
 # PrMs
 ## Table of Content
@@ -11,7 +12,8 @@
 + [Authors Info](#author-Info)
 
 ## Description
-<p> Description</p>
+<p>A website that will help landlords manage and keep track of their
+properties and clients.</p>
 
 ## Installation
 
