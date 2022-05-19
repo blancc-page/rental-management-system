@@ -8,11 +8,21 @@
       Welcome, please login to continue.
     </h1>
   </div>
+  
   <form class="login-form" action="/login" method="post">
     {{form.hidden_tag()}}
+  
     <div class="login-input">
+      {% for message in get_flashed_messages() %}
+      <div class="alert alert-danger">
+        {{ message }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      
+      </div>
+      {% endfor %}
       <!-- <label class="form-label" for="email">Email</label> -->
       {{form.email(type="email" ,id="email",class="form-control form-control-lg", placeholder="E-mail")}}
+   
     </div>
     <div class="login-input">
       {{form.password(type="password" ,id="password",class="form-control form-control-lg", placeholder="Password")}}
@@ -28,4 +38,5 @@
     </div>
   </form>
 </div>
+
 {% endblock %}

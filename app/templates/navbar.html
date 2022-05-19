@@ -8,7 +8,7 @@
                 <li><a href="#">About Us</a></li>
                 {% if current_user.is_authenticated %}
                 <a href="{{url_for('main.profile',uname=current_user.username)}}" class="current"><li style="color:white;padding:15px;">{{current_user.username}}</li></a>
-                <li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="{{url_for('auth.register')}}">Logout</a></li>
+                <li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="{{url_for('auth.logout')}}">Logout</a></li>
                 {% else %}
                 <li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="{{url_for('auth.register')}}">Register</a></li>
                 <li><i class="fa fa-sign-in" aria-hidden="true"></i><a href="{{url_for('auth.login')}}">Login</a></li> 

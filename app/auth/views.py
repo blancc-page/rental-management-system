@@ -25,7 +25,8 @@ def login():
     user = User.query.filter_by(email=form.email.data).first()
     if user is not None and user.verify_password(form.password.data):
       login_user(user,form.remember.data)
-      return render_template('profile/profile.html',user=user)
+      # return render_template('profile/profile.html',user=user)
+      return redirect(url_for('main.profile',uname=current_user.username))
     
     flash('Invalid username or password')
   title = 'Login'  
@@ -34,6 +35,6 @@ def login():
 @auth.route('/logout')
 @login_required
 def logout():
-  logout_user()
-  return redirect(url_for("main.index"))
+    logout_user()
+    return redirect(url_for("main.index"))
 

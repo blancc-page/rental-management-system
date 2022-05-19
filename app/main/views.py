@@ -22,7 +22,7 @@ def profile(uname):
     if user is None:
       abort(404)
       
-    return render_template('profile/profile.html', user=user,properties=properties)
+    return render_template('profile/profile.html', user=user, properties=properties)
   
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 def update_profile(uname):
@@ -60,12 +60,12 @@ def add_property():
       new_property_object = Property(property_type=property_type,user_id=current_user._get_current_object().id,property_name=property_name,property_value=property_value,property_rooms=property_rooms,property_location=property_location)
       
       new_property_object.save_property()
-      flash('Added property')
+      flash('Property Added Successfully')
       
-      return render_template('profile/profile.html',properties=properties,user=user_id,lands=lands)
+      return render_template('profile/profile.html',user=user_id,lands=lands,properties=properties)
   return render_template('add_property.html',form=form)
     
-@main.route('/property_details<pname>',methods=['GET','POST'])
+@main.route('/property_details/<pname>',methods=['GET','POST'])
 def property_details(pname):
   property = Property.query.filter_by(property_name=pname).all()
   return render_template('properties.html',property=property)
@@ -80,5 +80,10 @@ def update_pic(uname):
         user.profile_picture = path
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
+  
+# @main.route('/modal')
+# def modal():
+#   properties= Property.query.all()
+#   return render_template('modal.html',properties=properties)
 
   
