@@ -312,3 +312,38 @@ add property
 </nav>
 
 
+<div class="container bg-info">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="profile-pic text-center">
+      {% if user.profile_pic_path %}
+      <img src="{{url_for('static',filename=user.profile_picture_)}}" alt="" class="img-thumbnail rounded img-centered">
+      {%else%}
+      <p>No profile picture</p>
+      {% endif %}
+    </div>
+    </div>
+    <div class="col-md-5">
+      <h3>Name: {{user.firstname | capitalize}} {%if user.lastname%} {{user.lastname | capitalize}}{%else%} {% endif %} {{user.lastname | capitalize}}</h3>
+      <h5> Contact details:</h5>       
+        <p>Number: {{user.phonenumber}}</p> 
+        <p>E-mail: {{user.email}}</p> 
+    </div>
+    <div class="col-md-4">
+      <div class="user-bio">
+        {% if user.bio %}
+        <p> {{user.biography}}</p>
+        {%else%}
+        <p> {{user.firstname| capitalize}} has no bio </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div>
+  
+    <a href="{{url_for('main.update_profile',uname=user.username)}}"><button>Edit profile</button></a>
+    <a href="{{url_for('main.add_property')}}"><button>Add Property</button></a>
+
+  </div>
+</div>
+{{url_for('static',filename=user.profile_pic_path)}}
