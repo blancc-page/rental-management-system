@@ -6,17 +6,22 @@ from ..models import User
 
 class RegistrationForm(FlaskForm):
   firstname = StringField('First Name',validators=[DataRequired()])
-  middlename = StringField('Middle Name')
   lastname = StringField('Last Name',validators=[DataRequired()])
+  username = StringField('User Name',validators=[DataRequired()])
   email = StringField('Email',validators=[DataRequired()])
   phonenumber = StringField('Phone Number',validators=[DataRequired()])
   password = PasswordField('Password',validators=[DataRequired(),EqualTo('password_confirm',message='Password did not match')])
   password_confirm = PasswordField('Confirm Password',validators=[DataRequired()])
   submit = SubmitField('Register')
   
-  def validate_email(self,email_field):
-    if User.query.filter_by(email=email_field.data).first():
+  def validate_email(self,data_field):
+    if User.query.filter_by(email=data_field.data).first():
       raise ValidationError('Account Exists')
+    
+  def validate_username(self,data_field):
+        if User.query.filter_by(username = data_field.data).first():
+            raise ValidationError('username taken')
+
     
 class LoginForm(FlaskForm):
   email = StringField('Email',validators=[DataRequired()])
