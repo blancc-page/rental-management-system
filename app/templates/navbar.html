@@ -1,13 +1,16 @@
 
-
-    <nav class="nav">
+    <nav class="nav" id="nav">
         <div class="container">
-            <h1 class="logo"><a href="/">My Website</a></h1>
+            <h1 class="logo"><a href="/">PropertyMS</a></h1>
             <ul>
                 <li><a href="/" class="current">Home</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="#about-us">About</a></li>
                 {% if current_user.is_authenticated %}
-                <a href="{{url_for('main.profile',uname=current_user.username)}}" class="current"><li style="color:white;padding:15px;">{{current_user.username}}</li></a>
+
+                
+                <li style="color:white;padding:15px;"><a href="{{url_for('main.profile',uname=current_user.username)}}">{{current_user.username}}</a></li>
+                
+
                 <li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="{{url_for('auth.logout')}}">Logout</a></li>
                 {% else %}
                 <li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="{{url_for('auth.register')}}">Register</a></li>

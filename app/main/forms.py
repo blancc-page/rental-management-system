@@ -8,7 +8,7 @@ from ..models import *
 class UpdateProfile(FlaskForm):
   firstname = StringField('First Name',validators=[DataRequired()])
   phonenumber = StringField('Phone Number',validators=[DataRequired()])
-  biography = TextAreaField('Aboout you',validators=[DataRequired()])
+  biography = TextAreaField('About you',validators=[DataRequired()])
   submit = SubmitField('Submit')
   
 TYPE = [('Land', 'Land'), ('Building', 'Building'), ('Business', 'Business')]
