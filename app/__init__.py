@@ -25,8 +25,9 @@ def create_app(config_name):
   
   #app configurations
   app.config.from_object(config_options[config_name])
-  # app.config["SQLALCHEMY_DATABASE_URI"] ="postgres://nxbnavafzaacod:18fbf0d8977718cb774c8027f2afba79ff8c190b02524dd01ee50687c3cb39d2@ec2-54-165-184-219.compute-1.amazonaws.com:5432/d8ub6hh7hhlgat"
+ 
   db.init_app(app)
+  app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://eamvujmgmwjvxz:283e508ab9d77949f23009cafe38285920d6c0220d2975b17f56b18c11b7b1bc@ec2-34-201-95-176.compute-1.amazonaws.com:5432/d6bvv8hvt30f8e"
   
   #initialize flask extensions
   bootstrap.init_app(app)
