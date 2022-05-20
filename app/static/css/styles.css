@@ -195,6 +195,11 @@ span.remember-me-label{
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease-in;
   }
+
+  .hero-btn a{
+    text-decoration: none;
+    color: inherit;
+  }
   
 .hero-btn:hover {
     transform: scale(1.04);
