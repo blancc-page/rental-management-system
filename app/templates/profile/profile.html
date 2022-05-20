@@ -33,13 +33,18 @@
             
           </div>
         </div>
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-success">
+        {{ message }}
+        </div>
+      {% endfor %}
         <h5 class="text-center">All Properties</h5>
         <div class="card mb-4 mb-lg-0">
           <div class="card-body p-0">
             <ul class="list-group list-group-flush rounded-3">
               {% for property in properties %}
               <li class="list-group-item d-flex justify-content-between align-items-center p-3 mb-1">
-                <a href=""><p class="mb-0">{{property.property_name}}</p></a>
+                <a href="#"><p class="mb-0">{{property.property_name}}</p></a>
                 <i class="fas fa-globe fa-lg text-warning">{{property.property_location}}</i>
               </li>
               {% endfor %}
